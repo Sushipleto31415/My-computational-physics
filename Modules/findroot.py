@@ -1,4 +1,6 @@
 import numpy as np
+#This module is for finding roots of functions under call
+
 #Método de la bisección
 def biseccion(f,a,b,max_iter=100,*args,**kargs):
     """
