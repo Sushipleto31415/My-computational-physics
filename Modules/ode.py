@@ -21,8 +21,10 @@ def runge_kutta_4th(f, u0, t, dt, *args, **kwargs):
     """
 
     N = len(t)
-    u = np.zeros(N)
-    u[0] = u0
+
+    u = np.zeros([N, len(u0)]) # Initialize u as a 2D array
+
+    u[0] = u0 # Set the initial condition
 
     for n in range(N - 1):
         k1 = f(u[n], t[n], *args, **kwargs)
