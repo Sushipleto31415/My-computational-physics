@@ -5,9 +5,9 @@ from Modules.ode import runge_kutta_4th  # Asegúrate de que esta función esté
 
 # Constants
 G = 1  # Gravitational constant
-m1 = 1.0  # Mass of body 1
-m2 = 1.0  # Mass of body 2
-m3 = 10.0  # Mass of body 3
+m1 = 10.0  # Mass of body 1
+m2 = 20.0  # Mass of body 2
+m3 = 30.0  # Mass of body 3
 dt = 0.05  # Time step
 t = np.linspace(0, 100, int(100/dt))  # Simulation time
 d = 2  # Distance between bodies
@@ -71,6 +71,6 @@ def update(frame):
 
 # Create the animation
 ani = FuncAnimation(fig, update, frames=len(t), init_func=init, blit=True, interval=dt * 1000)
-
+ani.save("three_body.gif",fps=60)
 # Show the plot with the animation
 plt.show()
