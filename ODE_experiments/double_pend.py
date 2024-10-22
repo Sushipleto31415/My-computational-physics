@@ -88,6 +88,7 @@ ani = FuncAnimation(fig,
                            interval=dt * 1000)
 
 # Show the plot with the animation
+ani.save("double_pend.gif",fps=60)
 plt.show()
 
 

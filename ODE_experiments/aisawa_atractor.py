@@ -38,4 +38,5 @@ ax.set_ylabel('$y$ axis', labelpad=10)
 ax.set_zlabel('$z$ axis', labelpad=10)
 ax.set_title('Atractor de Aisawa')
 
+plt.savefig("aisawa_atractor.png")
 plt.show()
