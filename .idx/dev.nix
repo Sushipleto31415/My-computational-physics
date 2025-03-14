@@ -11,6 +11,8 @@
     pkgs.python311Packages.pip
     pkgs.nodejs_20
     pkgs.nodePackages.nodemon
+    pkgs.julia
+    pkgs.sudo
   ];
 
   # Sets environment variables in the workspace
