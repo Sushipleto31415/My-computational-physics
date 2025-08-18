@@ -24,7 +24,7 @@ def aisawa_ode(u,a,b,c,d,e,f):
 
     return np.array([dx,dy,dz])
 
-u0=np.array([0.1,0,0])
+u0=np.array([1,1,1])
 
 results=runge_kutta_4th(lambda u,
                          t: aisawa_ode(u,0.95,0.7,0.65,3.5,0.25,0.1),

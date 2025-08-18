@@ -42,6 +42,11 @@ def three_body(u, m1, m2, m3, G=G):
 # Use the Runge-Kutta method to get the results for the initial conditions
 result = runge_kutta_4th(lambda u, t: three_body(u, m1, m2, m3, G), initial_conditions, t, dt)
 
+#We check if the result shape is correct
+print("Result shape:", result.shape)  # Should be (n_frames, 12)
+if result.shape[1] != 12:
+    raise ValueError("Unexpected result shape. Expected 12 columns per frame.")
+
 # Set up the figure for the animation
 plt.style.use("dark_background")
 fig, ax = plt.subplots()
@@ -64,9 +69,9 @@ def update(frame):
     x3, y3 = result[frame, 8], result[frame, 9]  # Cuerpo 3
 
     # Set the line data (position of the three bodies)
-    lines[0].set_data(x1, y1)
-    lines[1].set_data(x2, y2)
-    lines[2].set_data(x3, y3)
+    lines[0].set_data([x1], [y1])
+    lines[1].set_data([x2], [y2])
+    lines[2].set_data([x3], [y3])
     return lines
 
 # Create the animation
